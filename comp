@@ -1,0 +1,16 @@
+flags="-lGL -lGLU -lGLEW -lglut -lm -Wno-write-strings -std=c++11"
+
+
+
+function comp()
+{
+    parts="obj_code/$1.out $parts"
+    g++ $1.cpp -o obj_code/$1.out -c $flags
+}
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+comp rad
+g++ -o RUN $parts $flags
+echo RUN me!
